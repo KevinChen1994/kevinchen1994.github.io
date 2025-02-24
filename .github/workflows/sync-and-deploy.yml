@@ -9,7 +9,7 @@ on:
   workflow_dispatch:     # 支持手动触发
 
 permissions:
-  contents: read
+  contents: write  # 修改为write以允许提交更改
   pages: write
   id-token: write
 
@@ -38,6 +38,14 @@ jobs:
         NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         DATABASE_ID: ${{ secrets.DATABASE_ID }}
       run: python notion_to_hugo.py
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add content/
+        git commit -m "chore: sync content from notion" || echo "No changes to commit"
+        git push
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
