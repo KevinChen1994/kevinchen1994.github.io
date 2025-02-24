@@ -1,6 +1,9 @@
 name: Sync Notion and Deploy Hugo
 
 on:
+  push:
+    branches:
+      - master  # 或者你使用的分支名
   schedule:
     - cron: '0 0 * * *'  # 每天0点运行
   workflow_dispatch:     # 支持手动触发
@@ -63,4 +66,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
