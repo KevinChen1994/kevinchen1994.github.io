@@ -6,23 +6,27 @@ from pathlib import Path
 import os
 from notion_converter import NotionConverter
 
-# 优先使用环境变量，如果环境变量不存在则从 config.py 导入
-NOTION_TOKEN = os.environ.get('NOTION_TOKEN')
-DATABASE_ID = os.environ.get('DATABASE_ID')
-
-if not NOTION_TOKEN or not DATABASE_ID:
-    try:
-        from config import NOTION_TOKEN, DATABASE_ID
-    except ImportError:
-        raise ValueError("请确保设置了 NOTION_TOKEN 和 DATABASE_ID 环境变量或创建了 config.py 文件")
-
-
 # 配置日志记录
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
+
+# 优先使用环境变量，如果环境变量不存在则从 config.py 导入
+NOTION_TOKEN = os.environ.get('NOTION_TOKEN')
+DATABASE_ID = os.environ.get('DATABASE_ID')
+
+if not NOTION_TOKEN or not DATABASE_ID:
+    logging.warning("未找到环境变量 NOTION_TOKEN 和 DATABASE_ID，尝试从 config.py 导入")
+    try:
+        from config import NOTION_TOKEN, DATABASE_ID
+    except ImportError:
+        raise ValueError("请确保设置了 NOTION_TOKEN 和 DATABASE_ID 环境变量或创建了 config.py 文件")
+
+else:
+    logging.info("已从环境变量中获取 NOTION_TOKEN 和 DATABASE_ID")
+
 
 class NotionToHugo:
     def __init__(self):
