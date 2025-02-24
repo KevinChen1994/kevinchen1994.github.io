@@ -2,6 +2,5 @@
 /resources/_gen/
 /assets/jsconfig.json
 /.history/
-/static/images/
 hugo_stats.json
 .hugo_build.lock
