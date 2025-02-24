@@ -1,0 +1,136 @@
+# 基础配置
+baseURL = "https://kevinchen1994.github.io/"  # 网站的基础URL
+languageCode = "zh-cn"          # 网站语言
+title = "厨师海森堡的厨房"      # 网站标题
+theme = "PaperMod"             # 使用的主题
+
+# 构建选项
+enableRobotsTXT = true         # 启用robots.txt生成
+buildDrafts = false            # 是否构建草稿内容
+buildFuture = false            # 是否构建未来日期的内容
+buildExpired = false           # 是否构建过期内容
+[pagination]
+  pagerSize = 10               # 分页大小
+
+# 参数配置
+[params]
+  env = "production"           # 环境设置
+  title = "我的博客"           # 网站标题
+  description = "欢迎来到我的个人博客"  # 网站描述
+  keywords = ["Blog", "Portfolio", "PaperMod"]  # 网站关键词
+  images = ["/images/profile.jpg"]  # 默认图片
+  DateFormat = "2006-01-02"    # 日期格式
+  defaultTheme = "auto"        # 默认主题模式（auto/light/dark）
+  
+  # Google Analytics 配置
+  googleAnalytics = "G-7EP4JNSGJZ"  # 替换为你的 Google Analytics 跟踪 ID
+  
+  # 功能开关
+  ShowShareButtons = true       # 显示分享按钮
+  ShowPostNavLinks = true       # 显示文章导航链接
+  ShowBreadCrumbs = true        # 显示面包屑导航
+  ShowCodeCopyButtons = true     # 显示代码复制按钮
+  ShowRssButtonInSectionTermList = true  # 在分类列表中显示RSS按钮
+  UseHugoToc = true             # 使用Hugo内置的目录生成
+  disableSpecial1stPost = false  # 禁用第一篇文章的特殊样式
+  disableScrollToTop = false     # 禁用返回顶部按钮
+  hidemeta = false               # 隐藏元数据
+  hideSummary = false            # 隐藏摘要
+  showtoc = true                 # 显示目录
+  tocopen = false                # 目录默认展开状态
+
+  [params.comments]
+    enable = true
+    [params.comments.giscus]
+      enable = true
+      repo = "kevinchen1994/blog-comments"
+      repoId = "R_kgDON9LpjQ"
+      category = "General"
+      categoryId = "DIC_kwDON9Lpjc4CnK1z"
+      mapping = "pathname"
+      strict = "0"
+      reactionsEnabled = "1"
+      emitMetadata = "0"
+      inputPosition = "bottom"
+      theme = "preferred_color_scheme"
+      lang = "zh-CN"
+
+  # 网站图标配置
+  favicon = "/favicon.png"
+  favicon16x16 = "/favicon-16x16.png"
+  favicon32x32 = "/favicon-32x32.png"
+
+  # 首页模式设置
+  [params.homeInfoParams]
+    Title = "欢迎来到我的厨房"
+    Content = '''👋嗨，我是Kevin，自然语言处理算法工程师👨🏻‍💻，不严肃跑者🏃，热爱生活的编程少年🧠，INFJ-A。
+
+笔记是总结知识增援未来的自己，写作是对未来要认识你的人的自我介绍。
+
+这个博客主要用来记录我的学习、生活、思考，你可以通过标签筛选你感兴趣的内容。
+
+如果你想了解我，可以在About Me页面进行查看。
+'''
+
+  # 社交链接
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/kevinchen1994"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:346521888@qq.com"
+  [[params.socialIcons]]
+    name = "strava"
+    url = "https://www.strava.com/athletes/112569335"
+
+  # 搜索功能
+  [params.fuseOpts]
+    isCaseSensitive = false      # 是否区分大小写
+    shouldSort = true            # 是否按相关性排序
+    location = 0                 # 匹配位置的重要性
+    distance = 1000             # 匹配距离的重要性
+    threshold = 0.4             # 匹配阈值
+    minMatchCharLength = 0      # 最小匹配字符长度
+    keys = ["title", "permalink", "summary", "content"]  # 搜索字段
+
+# 输出配置，配置这里才能进行搜索
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+# 导航菜单
+[[menu.main]]
+identifier = "home"           # 菜单项标识符
+name = "Home"                # 显示名称
+url = "/"                    # 链接地址
+weight = 1                   # 排序权重
+
+[[menu.main]]
+identifier = "search"        # 搜索页面
+name = "Search"
+url = "/search/"
+weight = 5
+
+[[menu.main]]
+identifier = "categories"    # 分类页面
+name = "Categories"
+url = "/categories/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"          # 标签页面
+name = "Tags"
+url = "/tags/"
+weight = 20
+
+[[menu.main]]
+identifier = "archives"      # 归档页面
+name = "Archives"
+url = "/posts/"
+weight = 30
+
+[[menu.main]]
+identifier = "about me"      # 关于页面
+name = "About Me"
+url = "/about/"
+weight = 40
+

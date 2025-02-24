@@ -1,0 +1,3 @@
+{{- if (.Params.comments | default .Site.Params.comments.giscus.enable) }}
+  {{- partial "comments.html" . }}
+{{- end }}
