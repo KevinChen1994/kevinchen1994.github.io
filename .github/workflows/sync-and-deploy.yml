@@ -37,7 +37,12 @@ jobs:
       env:
         NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         DATABASE_ID: ${{ secrets.DATABASE_ID }}
-      run: python notion_to_hugo.py
+      run: |
+        python notion_to_hugo.py
+        echo "检查content目录内容："
+        ls -la content/
+        echo "检查content/posts目录内容："
+        ls -la content/posts/
 
     - name: Commit changes
       run: |
