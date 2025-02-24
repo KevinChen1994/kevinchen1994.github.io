@@ -56,7 +56,7 @@ jobs:
         extended: true
 
     - name: Build Hugo site
-      run: hugo --minify
+      run: hugo
 
     - name: List all files in public directory
       run: |
