@@ -37,7 +37,7 @@ jobs:
       run: python notion_to_hugo.py
 
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
+      uses: peaceiris/actions-hugo@v3
       with:
         hugo-version: 'latest'
         extended: true
@@ -49,7 +49,7 @@ jobs:
       uses: actions/configure-pages@v4
 
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
+      uses: actions/upload-pages-artifact@v3
       with:
         path: ./public
 
