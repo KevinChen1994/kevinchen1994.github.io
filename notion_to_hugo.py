@@ -3,8 +3,19 @@ import logging
 from datetime import datetime
 from notion_client import Client
 from pathlib import Path
-from config import NOTION_TOKEN, DATABASE_ID
+import os
 from notion_converter import NotionConverter
+
+# 优先使用环境变量，如果环境变量不存在则从 config.py 导入
+NOTION_TOKEN = os.environ.get('NOTION_TOKEN')
+DATABASE_ID = os.environ.get('DATABASE_ID')
+
+if not NOTION_TOKEN or not DATABASE_ID:
+    try:
+        from config import NOTION_TOKEN, DATABASE_ID
+    except ImportError:
+        raise ValueError("请确保设置了 NOTION_TOKEN 和 DATABASE_ID 环境变量或创建了 config.py 文件")
+
 
 # 配置日志记录
 logging.basicConfig(
