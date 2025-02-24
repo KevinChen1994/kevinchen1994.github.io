@@ -58,6 +58,11 @@ jobs:
     - name: Build Hugo site
       run: hugo --minify
 
+    - name: List all files in public directory
+      run: |
+        echo "Listing all files in public directory:"
+        find public -type f
+
     - name: Setup Pages
       uses: actions/configure-pages@v4
 
