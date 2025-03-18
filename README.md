@@ -15,7 +15,8 @@
 ![GitHub Secret](/resources/github_secret.png)
 复制这个[Notion CRM数据库模板](https://www.notion.so/kevinchen1994/1a5f9fa1519f80b881b4ddbbd326320c?v=1a5f9fa1519f818e82ea000c2836b12f&pvs=4)到你的Notion，然后打开你Notion中的这个页面，点击右上角的省略号，添加connections，选择刚才创建的integration。
 ![Notion connection](/resources/notion_connection.png)
-点击Share，然后点击Copy link，复制该链接，链接长这样：https://www.notion.so/kevinchen1994/1a5f9fa1519f80b881b4ddbbd326320c?v=1a5f9fa1519f818e82ea000c2836b12f&pvs=4，其中1a5f9fa1519f80b881b4ddbbd326320c是databaseID，复制这个值（请使用你自己的ID，不要使用这个ID），使用同样的方法配置GitHub Secret中。
+点击Share，然后点击Copy link，复制该链接，链接长这样：`https://www.notion.so/kevinchen1994/1a5f9fa1519f80b881b4ddbbd326320c?v=1a5f9fa1519f818e82ea000c2836b12f&pvs=4`，其中1a5f9fa1519f80b881b4ddbbd326320c是databaseID，复制这个值，使用同样的方法配置GitHub Secret中。
+> ⚠️ **注意**：请确保使用自己的databaseID，而不是示例中的ID。
 ![Github databaseID](/resources/databaseID.png)
 配置完成后，就可以进行测试是否可以运行。可以在本地运行，执行.github/workflows中的脚本，或者在GitHub Action中手动执行。
 在GitHub Action中我配置的是每天零点自动运行一次，你也可以自己修改，或者选择手动执行。
