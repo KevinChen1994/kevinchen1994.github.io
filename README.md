@@ -26,6 +26,8 @@
     - cron: '0 0 * * *'  # 每天0点运行
   workflow_dispatch:     # 支持手动触发
 ```
+## 其他配置
+如果你想配置about me 或者搜索等自定义的页面，可以在本项目contents目录下创建about.md和search.md文件，格式请按照Hugo的格式来编写。项目在运行的过程中会自动转换成Hugo主题下的HTML。
 ## 选择Hugo主题
 去Hugo的主题库中选择一个主题，然后将该主题的代码复制到该仓库的themes目录下。
 可以使用 git submodule 来管理主题代码。
