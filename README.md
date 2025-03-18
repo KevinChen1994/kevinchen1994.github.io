@@ -17,6 +17,7 @@
 ![Notion connection](/resources/notion_connection.png)
 点击Share，然后点击Copy link，复制该链接，链接长这样：`https://www.notion.so/kevinchen1994/1a5f9fa1519f80b881b4ddbbd326320c?v=1a5f9fa1519f818e82ea000c2836b12f&pvs=4`，其中1a5f9fa1519f80b881b4ddbbd326320c是databaseID，复制这个值，使用同样的方法配置GitHub Secret中。
 > ⚠️ **注意**：请确保使用自己的databaseID，而不是示例中的ID。
+
 ![Github databaseID](/resources/databaseID.png)
 配置完成后，就可以进行测试是否可以运行。可以在本地运行，执行.github/workflows中的脚本，或者在GitHub Action中手动执行。
 在GitHub Action中我配置的是每天零点自动运行一次，你也可以自己修改，或者选择手动执行。
@@ -32,3 +33,5 @@
 通过```hugo server```来启动本地服务器，然后在浏览器中访问URL_ADDRESS:PORT，即可看到本地的博客。
 ## 感谢
 本项目灵感来自于[Notion-Hugo](https://github.com/HEIGE-PCloud/Notion-Hugo)，我自己用了挺长时间，决定使用Python复现该项目，本项目实现的功能略微比Notion-Hugo少，比如少一些格式的支持、自定义页面等，不过对于个人来说已经够用了。
+## 最后
+如果本项目对你有用的话，请帮忙点一个star，感谢！
