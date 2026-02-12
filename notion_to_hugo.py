@@ -37,7 +37,10 @@ class NotionToHugo:
     def get_database_entries(self):
         """获取Notion数据库中的所有条目"""
         try:
-            response = self.notion.data_sources.query(data_source_id=DATABASE_ID)
+            response = self.notion.request(
+                path=f"databases/{DATABASE_ID}/query",
+                method="post",
+            )
             return response.get("results", [])
         except Exception as e:
             logging.error(f"获取数据库条目时出错: {e}", exc_info=True)
