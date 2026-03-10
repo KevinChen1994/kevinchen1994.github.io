@@ -25,10 +25,6 @@ buildExpired = false           # 是否构建过期内容
   # Google Analytics 配置
   googleAnalytics = "G-7EP4JNSGJZ"  # 替换为你的 Google Analytics 跟踪 ID
   
-  # 作者信息
-  [params.author]
-    name = "Kevin"
-
   # 功能开关
   ShowShareButtons = true       # 显示分享按钮
   ShowPostNavLinks = true       # 显示文章导航链接
@@ -42,6 +38,10 @@ buildExpired = false           # 是否构建过期内容
   hideSummary = false            # 隐藏摘要
   showtoc = true                 # 显示目录
   tocopen = false                # 目录默认展开状态
+
+  # 作者信息（必须放在 [params] 的普通键值对之后，子表之前）
+  [params.author]
+    name = "Kevin"
 
   [params.comments]
     enable = true
